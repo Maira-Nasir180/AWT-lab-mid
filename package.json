@@ -1,0 +1,8 @@
+{
+  "name": "vspark-portal",
+  "version": "1.0.0",
+  "description": "VSPARK registration portal - Prompt Engineering Competition, COMSATS University Islamabad",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "express": "^4.19.2" }
+}

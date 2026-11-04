@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Admin | VSPARK Registrations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <span class="brand"><b>V</b>SPARK <span class="badge">Admin</span></span>
+      <button class="link-btn" id="logoutBtn" hidden>Log out</button>
+    </div>
+  </header>
+
+  <!-- Login -->
+  <main class="wrap login" id="loginView">
+    <form class="card" id="loginForm">
+      <h2>Admin login</h2>
+      <p class="muted">Sign in to view and manage registrations.</p>
+      <div class="field"><label for="username">Username</label><input id="username" autocomplete="username" required /></div>
+      <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required /></div>
+      <p class="form-error" id="loginError" role="alert" hidden></p>
+      <button class="btn" type="submit">Log in</button>
+    </form>
+  </main>
+
+  <!-- Dashboard -->
+  <main class="wrap dash" id="dashView" hidden>
+    <section class="stats" id="stats"></section>
+
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search name, reg no, team, email, transaction ID" aria-label="Search registrations" />
+      <select id="instituteFilter" aria-label="Filter by institute"><option value="">All institutes</option></select>
+      <select id="paymentFilter" aria-label="Filter by payment">
+        <option value="">All payments</option>
+        <option value="pending">Pending</option>
+        <option value="verified">Verified</option>
+      </select>
+      <button class="btn btn-small" id="exportBtn">Download CSV</button>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Team / Members</th><th>Contact</th><th>Payment</th><th>Registered</th><th></th></tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="empty muted" id="empty" hidden>No registrations match.</p>
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

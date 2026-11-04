@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register: AI Video Generation Challenge | VSPARK 2025</title>
+  <meta name="description" content="Register for the VSPARK Prompt Engineering Competition at COMSATS University Islamabad." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <span class="brand"><b>V</b>SPARK</span>
+      <span class="topbar-note">COMSATS University Islamabad</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="hero-meta">VSPARK · December 10, 2025</p>
+        <h1>Prompt Engineering Competition</h1>
+        <p class="hero-sub">AI Video Generation Challenge. Turn the organizers' scenario into an original AI video in 120 minutes.</p>
+        <ul class="facts">
+          <li><strong>120 min</strong><span>Duration</span></li>
+          <li><strong>1 – 2</strong><span>Team size</span></li>
+          <li><strong>PKR 1,000</strong><span>Registration fee</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="wrap layout">
+      <section class="card" id="register" aria-labelledby="form-title">
+        <h2 id="form-title">Register your team</h2>
+        <p class="muted" id="formIntro">Solo or with one teammate. Fields marked * are required.</p>
+
+        <form id="form" novalidate>
+          <fieldset>
+            <legend>Team</legend>
+            <div class="field">
+              <label for="teamName">Team name</label>
+              <input id="teamName" name="teamName" type="text" maxlength="40" placeholder="Optional for solo entries" />
+              <small class="error" data-for="teamName"></small>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Member 1 (you)</legend>
+            <div class="row">
+              <div class="field">
+                <label for="member1Name">Full name *</label>
+                <input id="member1Name" name="member1Name" type="text" autocomplete="name" required />
+                <small class="error" data-for="member1Name"></small>
+              </div>
+              <div class="field">
+                <label for="member1RegNo">Registration no. *</label>
+                <input id="member1RegNo" name="member1RegNo" type="text" placeholder="FA23-BSE-062" maxlength="20" data-regno required />
+                <small class="error" data-for="member1RegNo"></small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="member1Institute">Institute *</label>
+                <select id="member1Institute" name="member1Institute" required></select>
+                <small class="error" data-for="member1Institute"></small>
+              </div>
+              <div class="field">
+                <label for="member1Program">Degree program *</label>
+                <select id="member1Program" name="member1Program" required></select>
+                <small class="error" data-for="member1Program"></small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+                <small class="error" data-for="email"></small>
+              </div>
+              <div class="field">
+                <label for="phone">Mobile number *</label>
+                <input id="phone" name="phone" type="tel" inputmode="numeric" placeholder="03001234567" maxlength="11" required />
+                <small class="error" data-for="phone"></small>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Member 2 (optional)</legend>
+            <div class="row">
+              <div class="field">
+                <label for="member2Name">Full name</label>
+                <input id="member2Name" name="member2Name" type="text" />
+                <small class="error" data-for="member2Name"></small>
+              </div>
+              <div class="field">
+                <label for="member2RegNo">Registration no.</label>
+                <input id="member2RegNo" name="member2RegNo" type="text" placeholder="SP24-BCS-015" maxlength="20" data-regno />
+                <small class="error" data-for="member2RegNo"></small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="member2Institute">Institute</label>
+                <select id="member2Institute" name="member2Institute"></select>
+                <small class="error" data-for="member2Institute"></small>
+              </div>
+              <div class="field">
+                <label for="member2Program">Degree program</label>
+                <select id="member2Program" name="member2Program"></select>
+                <small class="error" data-for="member2Program"></small>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Payment of PKR 1,000</legend>
+            <div class="row">
+              <div class="field">
+                <label for="paymentMethod">Paid via *</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                  <option value="">Choose method</option>
+                  <option>Easypaisa</option>
+                  <option>JazzCash</option>
+                  <option>Bank transfer</option>
+                </select>
+                <small class="error" data-for="paymentMethod"></small>
+              </div>
+              <div class="field">
+                <label for="transactionId">Transaction ID *</label>
+                <input id="transactionId" name="transactionId" type="text" required />
+                <small class="error" data-for="transactionId"></small>
+              </div>
+            </div>
+          </fieldset>
+
+          <p class="form-error" id="formError" role="alert" hidden></p>
+          <button type="submit" class="btn" id="submitBtn">Submit registration</button>
+        </form>
+
+        <div class="success" id="success" hidden tabindex="-1">
+          <h2>You're registered</h2>
+          <p>Your registration ID is <strong id="regId"></strong>. Save it; you'll need it on competition day.</p>
+          <p class="muted">Bring your laptop and arrange your own AI tool accounts and credits.</p>
+        </div>
+      </section>
+
+      <aside class="side">
+        <div class="card">
+          <h3>What to expect</h3>
+          <p>You get a scenario, reference images and instructions at the start. Generate an original AI video and submit it as an MP4 before time runs out.</p>
+          <p>You're judged on prompt engineering, scenario accuracy, visual quality and creativity.</p>
+        </div>
+        <div class="card">
+          <h3>Rules</h3>
+          <ul class="rules">
+            <li>Bring your own laptop, tool accounts and credits.</li>
+            <li>Runway, Kling, Pika, Sora, CapCut, Flow and similar tools are allowed.</li>
+            <li>AI assistants like ChatGPT, Gemini and Claude may help with prompts.</li>
+            <li>Videos must be created during the 120 minutes. Pre-made videos are not accepted.</li>
+            <li>Don't copy another team's prompts or fabricate generation evidence.</li>
+            <li>Judges may inspect your prompts. Their decision is final.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">VSPARK 2025 · COMSATS University Islamabad</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
